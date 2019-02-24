@@ -1,0 +1,271 @@
+*{
+margin:0;
+padding:0;
+}
+
+.main {
+ margin-left: 10px;
+ width:100%;
+}
+
+.sidebar_item {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  width:150px;
+  padding:5px;
+}
+
+.logo{
+  width: 140px;
+}
+
+.総合検索{
+  margin-bottom:20px;
+}
+
+.エリア検索{
+  margin-bottom:20px;
+}
+
+/*--------------------------------*/
+
+.ボタン{
+  position:relative;
+}
+
+.ボタン最大{
+  position:absolute;
+  margin-left:94px;
+}
+
+.ボタン最大-上{
+  position:relative;
+  width: 0;
+  height: 0;
+  border-left:47px solid transparent ;
+  border-bottom: 10px solid white;
+}
+
+.ボタン最大-下{
+  position:relative;
+  width:47px;
+  height:50px;
+  background-color:white;
+}
+
+/*--------------------------------*/
+
+.ボタン最大:hover .ボタン最大-上{
+  width: 0;
+  height: 0;
+  border-left:47px solid transparent ;
+  border-bottom: 10px solid black;
+}
+
+.ボタン最大:hover .ボタン最大-下{
+  width:47px;
+  height:50px;
+  background-color:black;
+}
+
+.ボタン最大:hover ~ .ボタン中間 > .ボタン中間-上{
+  width: 0;
+  height: 0;
+  border-left:47px solid transparent ;
+  border-bottom: 10px solid black;
+}
+
+.ボタン最大:hover ~ .ボタン中間 > .ボタン中間-下{
+  width:47px;
+  height:40px;
+  background-color:black;
+}
+
+.ボタン最大:hover ~ .ボタン最小 > .ボタン最小-上{
+  width: 0;
+  height: 0;
+  border-left:47px solid transparent ;
+  border-bottom: 10px solid black;
+}
+
+.ボタン最大:hover ~ .ボタン最小 > .ボタン最小-下{
+  width:47px;
+  height:30px;
+  background-color:black;
+}
+
+#fukidasi{
+  position:absolute;
+  margin-top:60px;
+  margin-left:-60px;
+  width:100px;
+  display:none;
+}
+
+#fukidasi2{
+  position:absolute;
+  margin-top:50px;
+  margin-left:-40px;
+  width:200px;
+  display:none;
+}
+
+#fukidasi3{
+  position:absolute;
+  margin-top:40px;
+  margin-left:30px;
+  width:200px;
+  display:none;
+}
+/*-------------------------------------*/
+
+.ボタン中間{
+  position:absolute;
+  margin-top:10px;
+  margin-left:47px;
+}
+
+.ボタン中間-上{
+  position:relative;
+  width: 0;
+  height: 0;
+  border-left:47px solid transparent ;
+  border-bottom: 10px solid white;
+}
+
+.ボタン中間-下{
+  position:relative;
+  width:47px;
+  height:40px;
+  background-color:white;
+}
+
+/*------------------------------------*/
+
+.ボタン中間:hover .ボタン中間-上{
+  width: 0;
+  height: 0;
+  border-left:47px solid transparent ;
+  border-bottom: 10px solid black;
+}
+
+.ボタン中間:hover .ボタン中間-下{
+  width:47px;
+  height:40px;
+  background-color:black;
+}
+
+.ボタン中間:hover ~ .ボタン最小 > .ボタン最小-上{
+  width: 0;
+  height: 0;
+  border-left:47px solid transparent ;
+  border-bottom: 10px solid black;
+}
+
+.ボタン中間:hover ~ .ボタン最小 > .ボタン最小-下{
+  width:47px;
+  height:30px;
+  background-color:black;
+}
+/*------------------------------------*/
+
+.ボタン最小{
+  position:absolute;
+  margin-top:20px;
+}
+
+
+.ボタン最小-上{
+  position:relative;
+  width: 0;
+  height: 0;
+  border-left:47px solid transparent ;
+  border-bottom: 10px solid white;
+}
+
+.ボタン最小-下{
+  position:relative;
+  width:47px;
+  height:30px;
+  background-color:white;
+}
+/*-------------------------------------*/
+
+.ボタン最小:hover .ボタン最小-上{
+  width: 0;
+  height: 0;
+  border-left:47px solid transparent ;
+  border-bottom: 10px solid black;
+}
+
+.ボタン最小:hover .ボタン最小-下{
+  width:47px;
+  height:30px;
+  background-color:black;
+}
+
+/*--------------------------------------*/
+
+.境界線1{
+  position:absolute;
+  margin-top:9.5px;
+  margin-left:94px;
+}
+
+.境界線1-上{
+  width:0px;
+  height:0px;
+  border-left:0.5px solid transparent;
+  border-bottom:0.5px solid gray;
+
+}
+
+.境界線1-下{
+  width:0.5px;
+  height:50px;
+  background-color:gray;
+}
+
+.境界線2{
+  position:absolute;
+  margin-top:19.5px;
+  margin-left:47px;
+}
+
+.境界線2-上{
+  width:0px;
+  height:0px;
+  border-left:0.5px solid transparent;
+  border-bottom:0.5px solid gray;
+
+}
+
+.境界線2-下{
+  width:0.5px;
+  height:40px;
+  background-color:gray;
+}
+
+/*-----------------------------------*/
+
+.sidebar {
+background-color:#e1e5ef;
+}
+
+.content{
+  display: flex;
+}
+
+.list li{
+  width: 300px;
+  float: left;
+  list-style: none;
+  margin:20px 20px 20px 20px;
+  background-color:#bed4f7
+}
+
+
+img{
+  width:200px;
+}

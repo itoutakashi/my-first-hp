@@ -1,0 +1,15 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>詳細</title>
+</head>
+<body>
+{% for bukken_syousai_db in bukken_syousai_db.all %}
+  <h3>タイトル： {{ bukken_syousai_db.タイトル}}</h3>
+  <p>紹介文： {{bukken_syousai_db.紹介文}}</p>
+{% endfor %}
+  <a href="{% url 'bukken_itiran' %}">TOP</a>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>東京２３区</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bukken/css/kensaku.css' %}"/>
+  </head>
+<body id="itiran">
+  <div id="wrap" class="clearfix">
+    <div class="content">
+      <div class="sidebar">
+        <div class="sidebar_item">
+          <p><a href="{% url 'bukken_itiran' %}"><img src="{% static "img/logo.png" %}" class="logo"></a></p>
+          <!--総合検索-->
+          <div class="総合検索">
+            <form action="{% url 'bukken_kensaku_area_outof23_kensaku' %}" method="post">
+              {% csrf_token %}
+              {{form}}
+              <input type="submit" value="検索">
+            </form>
+          </div>
+          <!--エリア検索-->
+          <div class="エリア検索">
+            <p>【エリア検索】</p>
+            <a href={% url 'bukken_kensaku_area' %}><p>東京２３区</p></a>
+            <a href={% url 'bukken_kensaku_area_outof23' %}><p>東京２３区外</p></a>
+            <a href={% url 'bukken_kensaku_area_oot' %}><p>その他</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+      <h3>東京２３区外</h3>
+          {% for bukken_kensaku_area_outof23_kensaku_db in bukken_kensaku_area_outof23_kensaku_db %}
+                <ul class="clearfix list">        
+                <li><h3>タイトル： {{ bukken_kensaku_area_outof23_kensaku_db.タイトル }}</h3>
+                    <p> 公開日：{{ bukken_kensaku_area_outof23_kensaku_db.公開日 }}</p>
+                    <p> 住所：{{ bukken_kensaku_area_outof23_kensaku_db.住所 }}</p>  
+                    <p> 間取り：{{ bukken_kensaku_area_outof23_kensaku_db.間取り }}</p>
+                    <a href="{% url 'bukken_syousai' bukken_kensaku_area_outof23_kensaku_db.id %}"><img src="{{ bukken_kensaku_area_outof23_kensaku_db.写真1.url }}"/></a></li>
+                </ul>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

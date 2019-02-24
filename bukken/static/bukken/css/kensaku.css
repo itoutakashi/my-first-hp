@@ -1,0 +1,46 @@
+*{
+margin:0;
+padding:0;
+}
+
+.main {
+ margin-left: 10px;
+ width:100%;
+}
+
+.sidebar_item {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 10px;
+  width:150px;
+  padding:5px;
+}
+
+.logo{
+  width: 140px;
+}
+
+.総合検索{
+  margin-bottom:20px;
+}
+
+.sidebar {
+background-color:#e1e5ef;
+}
+
+.content{
+  display: flex;
+}
+
+.list li{
+  width: 300px;
+  float: left;
+  list-style: none;
+  margin:20px 20px 20px 20px;
+  background-color:#bed4f7
+}
+
+
+img{
+  width:200px;
+}

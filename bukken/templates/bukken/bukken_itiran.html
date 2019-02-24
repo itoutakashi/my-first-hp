@@ -1,0 +1,79 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>物件</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'bukken/css/style_bukken.css' %}"/>
+    <script src="{% static 'bukken/js/bukken.js' %}"></script>
+  </head>
+<body id="itiran">
+  <div id="wrap" class="clearfix">
+    <div class="content">
+      <div class="sidebar">
+        <div class="sidebar_item">
+          <p><a href="{% url 'bukken_itiran' %}"><img src="{% static "img/logo.png" %}" class="logo"></a></p>
+          <!--総合検索-->
+          <div class="総合検索">
+            <form action="{% url 'bukken_kensaku' %}" method="post">
+              {% csrf_token %}
+              {{form}}
+              <input type="submit" value="検索">
+            </form>
+          </div>
+          <!--エリア検索-->
+          <div class="エリア検索">
+            <p>【エリア検索】</p>
+              <a href={% url 'bukken_kensaku_area' %}><p>東京２３区</p></a>
+              <a href={% url 'bukken_kensaku_area_outof23' %}><p>東京２３区外</p></a>
+              <a href={% url 'bukken_kensaku_area_oot' %}><p>その他</p></a>
+          </div>
+          <!--金額検索-->
+          <div class="金額検索">
+            <p>【金額検索】</p>
+            <div class="ボタン">
+              <div class="ボタン最大" id="target" onMouseover="openPopUp()" onMouseout="closePopUp()">
+                <div id="fukidasi">40万円以上</div>
+                <div class="ボタン最大-上"></div>
+                <div class="ボタン最大-下"></div>
+              </div>
+              <div class="ボタン中間" id="target2" onMouseover="openPopUp2()" onMouseout="closePopUp2()">
+                <div id="fukidasi2">20万円〜40万円</div>
+                <div class="ボタン中間-上"></div>
+                <div class="ボタン中間-下"></div>
+              </div>
+              <div class="ボタン最小" id="target3" onMouseover="openPopUp3()" onMouseout="closePopUp3()">
+                <div id="fukidasi3">20万円未満</div>
+                <div class="ボタン最小-上"></div>
+                <div class="ボタン最小-下"></div>
+              </div>
+              <div class="境界線1">
+                <div class="境界線1-上"></div>
+                <div class="境界線1-下"></div>
+              </div>
+              <div class="境界線2">
+                <div class="境界線2-上"></div>
+                <div class="境界線2-下"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">
+      <h3>一覧</h3>
+          {% for bukken_itiran_db in bukken_itiran_db %}
+                <ul class="clearfix list">        
+                <li><h3>タイトル： {{ bukken_itiran_db.タイトル }}</h3>
+                    <p> 公開日：{{ bukken_itiran_db.公開日 }}</p>
+                    <p> 住所：{{ bukken_itiran_db.住所 }}</p>  
+                    <p> 間取り：{{ bukken_itiran_db.間取り }}</p>
+                    <!--{{bukken_itiran_db.id}}-->
+                    <a href="{% url 'bukken_syousai' bukken_itiran_db.id %}"><img src="{{ bukken_itiran_db.写真1.url }}"/></a></li>
+                </ul>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</body>
+</html>
